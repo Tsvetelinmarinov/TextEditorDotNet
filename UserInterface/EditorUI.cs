@@ -1,6 +1,8 @@
 ﻿// TextEditor
 
-namespace TextEditor
+using TextEditor.Functionality;
+
+namespace TextEditor.UserInterface
 {
     /// <summary>
     /// The Graphical User Interface of the application.
@@ -75,12 +77,12 @@ namespace TextEditor
             Text = "TextEditor";
             Size = new(1400, 800);
             Icon = Properties.Resources.appIcon;
-            BackColor = Color.GhostWhite;
+            BackColor = ProfessionalColors.SeparatorLight;
             StartPosition = FormStartPosition.CenterScreen;
             Visible = true;
-            MaximizeBox = false;
+            MaximizeBox = true;
             MinimumSize = Size;
-            MaximumSize = Size;
+            MaximumSize = new(1920, 1080);
 
             CreateEditor();
             CreateMenu();
@@ -100,6 +102,7 @@ namespace TextEditor
                 ScrollBars = ScrollBars.Both,
                 BorderStyle = BorderStyle.None,
                 WordWrap = false,
+                Anchor = AnchorStyles.Left | AnchorStyles.Right | AnchorStyles.Top | AnchorStyles.Bottom
             };
 
             Controls.Add(_textBox);
@@ -112,7 +115,8 @@ namespace TextEditor
             {
                 Size = new(1400, 35),
                 Location = new(0, 0),
-                BackColor = ProfessionalColors.SeparatorLight
+                BackColor = Color.FromArgb(100, 240, 220, 230),
+                Anchor = AnchorStyles.Left | AnchorStyles.Right | AnchorStyles.Top | AnchorStyles.Bottom
             };
 
             #region File Menu
@@ -226,6 +230,7 @@ namespace TextEditor
 #pragma warning disable IDE0300
                 new ToolStripMenuItem[]
                 {
+                    _fileMenu, _optionsMenu, _aboutMenu!,
                     _newFile, _newWind, _open,
                     _save, _restart, _exit,
                     _fontAndColor, _appearance,
@@ -249,6 +254,7 @@ namespace TextEditor
 #pragma warning disable IDE0300
                 new ToolStripMenuItem[]
                 {
+                    _fileMenu, _optionsMenu, _aboutMenu!,
                     _newFile, _newWind, _open,
                     _save, _restart, _exit, 
                     _fontAndColor, _appearance,

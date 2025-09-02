@@ -1,15 +1,18 @@
 ﻿// TextEditor
 
-using System.Drawing.Text;
-using CommonLibrary.Exceptions;
-using CommonLibrary.Collections;
 using System.Diagnostics;
+using System.Drawing.Text;
+using TextEditor.Renderers;
+using CommonLibrary.Attributes;
+using CommonLibrary.Exceptions;
+using TextEditor.UserInterface;
 
-namespace TextEditor
+namespace TextEditor.Functionality
 {
     /// <summary>
     ///  Provides functionality.
     /// </summary>
+    [Usage("Provides functionality for all the components of the editor")]
     internal class Core
     {
         // Creates new empty file in the text box.
@@ -480,10 +483,11 @@ namespace TextEditor
         // Sets the classic light theme
         internal static void SetLightTheme(Form window, MenuStrip menuBar, TextBox box, ToolStripMenuItem[] menus)
         {
-            window.BackColor = Color.GhostWhite;
-            
-            menuBar.BackColor = ProfessionalColors.SeparatorLight;
+            window.BackColor = ProfessionalColors.SeparatorLight;
+
+            menuBar.BackColor = Color.FromArgb(100, 250, 230, 250);
             menuBar.ForeColor = Color.Black;
+            menuBar.Renderer = null;
 
             foreach (ToolStripMenuItem menu in menus)
             {
@@ -501,18 +505,19 @@ namespace TextEditor
         {
             window.BackColor = Color.FromArgb(28, 28, 28);
             
-            menuBar.BackColor = Color.FromArgb(38, 33, 48);
+            menuBar.BackColor = Color.FromArgb(23, 23, 23);
             menuBar.ForeColor = Color.GhostWhite;
+            menuBar.Renderer = new DarkModeRenderer();
 
             foreach (ToolStripMenuItem menu in menus)
             {
-                menu.BackColor = Color.FromArgb(38, 33, 48);
+                menu.BackColor = Color.FromArgb(27, 27, 27);
                 menu.ForeColor = Color.GhostWhite;
             }
 
             box.BackColor = Color.FromArgb(28, 28, 28);
             box.ForeColor = Color.GhostWhite;
-            box.BorderStyle = BorderStyle.FixedSingle;
+            box.BorderStyle = BorderStyle.FixedSingle;          
         }
 
 

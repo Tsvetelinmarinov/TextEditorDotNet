@@ -1,6 +1,7 @@
 // TextEditor
 
 using CommonLibrary.Attributes;
+using TextEditor.UserInterface;
 
 namespace TextEditor
 {

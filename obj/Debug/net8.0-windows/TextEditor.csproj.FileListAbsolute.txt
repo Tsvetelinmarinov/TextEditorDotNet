@@ -18,3 +18,4 @@ C:\Users\Cvete\OneDrive\Documents\Visual Studio 2022\Projects\TextEditorNew\Text
 C:\Users\Cvete\OneDrive\Documents\Visual Studio 2022\Projects\TextEditorNew\TextEditor\TextEditor\obj\Debug\net8.0-windows\ref\TextEditor.dll
 C:\Users\Cvete\OneDrive\Documents\Visual Studio 2022\Projects\TextEditorNew\TextEditor\TextEditor\obj\Debug\net8.0-windows\TextEditor.Properties.Resources.resources
 C:\Users\Cvete\OneDrive\Documents\Visual Studio 2022\Projects\TextEditorNew\TextEditor\TextEditor\obj\Debug\net8.0-windows\TextEditor.csproj.GenerateResource.cache
+C:\Users\Cvete\OneDrive\Documents\Visual Studio 2022\Projects\TextEditorNew\TextEditor\TextEditor\obj\Debug\net8.0-windows\TextEditor.sourcelink.json
