@@ -348,6 +348,20 @@ namespace TextEditor.Functionality
                 Bounds = new(520, 109, 140, 1)
             };
 
+            Label separator1 = new()
+            {
+                Size = new(1, 23),
+                Location = new(368, 50),
+                BackColor = ProfessionalColors.SeparatorDark
+            };
+
+            Label separator2 = new()
+            {
+                Size = new(1, 23),
+                Location = new(288, 101),
+                BackColor = ProfessionalColors.SeparatorDark
+            };
+
 #pragma warning disable IDE0300
             propWind.Controls.AddRange(
                 new Control[]
@@ -355,7 +369,8 @@ namespace TextEditor.Functionality
                     fontName, fontBox, fontColor,
                     colorPicker, fontSize, sizeSpinner,
                     fontStyle, styleBox, topBorder,
-                    leftBorder, rigthBorder
+                    leftBorder, rigthBorder, separator1,
+                    separator2
                 }
             );
 #pragma warning restore IDE0300
@@ -391,7 +406,7 @@ namespace TextEditor.Functionality
                 Text = "Foreground",
                 Font = new Font("Seoge UI", 11),
                 Size = new(90, 20),
-                Location = new(20, 60)
+                Location = new(35, 60)
             };
 
             Button foreButton = new()
@@ -399,7 +414,7 @@ namespace TextEditor.Functionality
                 Text = "Choose",
                 Font = new("Cascadia Code", 10, FontStyle.Regular),
                 Size = new(100, 30),
-                Location = new(110, 56)
+                Location = new(240, 56)
             };
             foreButton.Click += (sender, eventArgs) => ChangeForeground(box);
 
@@ -408,7 +423,7 @@ namespace TextEditor.Functionality
                 Text = "Editor background",
                 Font = foreground.Font,
                 Size = new(130, 20),
-                Location = new(20, 120)
+                Location = new(35, 120)
             };
 
             Button editorBackgroundButton = new()
@@ -416,7 +431,7 @@ namespace TextEditor.Functionality
                 Text = "Choose",
                 Font = foreButton.Font,
                 Size = new(100, 30),
-                Location = new(153, 115)
+                Location = new(240, 115)
             };
             editorBackgroundButton.Click += (sender, eventArgs) => ChangeEditorBackground(box);
 
@@ -425,7 +440,7 @@ namespace TextEditor.Functionality
                 Text = "Application background",
                 Font = foreground.Font,
                 Size = new(165, 20),
-                Location = new(20, 180)
+                Location = new(35, 180)
             };
 
             Button appBackgroundButton = new()
@@ -433,7 +448,7 @@ namespace TextEditor.Functionality
                 Text = "Choose",
                 Font = foreButton.Font,
                 Size = new(100, 30),
-                Location = new(186, 175)
+                Location = new(240, 175)
             };
             appBackgroundButton.Click += (sender, eventArgs) => ChangeAppBackground(mainWindow);
 
@@ -442,7 +457,7 @@ namespace TextEditor.Functionality
                 Text = "Menu bar color",
                 Font = foreground.Font,
                 Size = new(110, 20),
-                Location = new(20, 240)
+                Location = new(35, 240)
             };
 
             Button menuColorButton = new()
@@ -450,9 +465,72 @@ namespace TextEditor.Functionality
                 Text = "Choose",
                 Font = foreButton.Font,
                 Size = new(100, 30),
-                Location = new(130, 235)
+                Location = new(240, 235)
             };
             menuColorButton.Click += (sender, eventArgs) => ChangeMenuBarColor(menuBar);
+
+            Label spacer1 = new()
+            {
+                Size = new(25, 1),
+                Location = new(2, 70),
+                BackColor = ProfessionalColors.SeparatorDark
+            };
+
+            Label spacer2 = new()
+            {
+                Size = new(25, 1),
+                Location = new(2, 130),
+                BackColor = ProfessionalColors.SeparatorDark
+            };
+
+            Label spacer3 = new()
+            {
+                Size = new(25, 1),
+                Location = new(2, 190),
+                BackColor = ProfessionalColors.SeparatorDark
+            };
+
+            Label spacer4 = new()
+            {
+                Size = new(25, 1),
+                Location = new(2, 250),
+                BackColor = ProfessionalColors.SeparatorDark
+            };
+
+            Label spacer5 = new()
+            {
+                Size = new(25, 1),
+                Location = new(350, 70),
+                BackColor = ProfessionalColors.SeparatorDark
+            };
+
+            Label spacer6 = new()
+            {
+                Size = new(25, 1),
+                Location = new(350, 130),
+                BackColor = ProfessionalColors.SeparatorDark
+            };
+
+            Label spacer7 = new()
+            {
+                Size = new(25, 1),
+                Location = new(350, 190),
+                BackColor = ProfessionalColors.SeparatorDark
+            };
+
+            Label spacer8 = new()
+            {
+                Size = new(25, 1),
+                Location = new(350, 250),
+                BackColor = ProfessionalColors.SeparatorDark
+            };
+
+            Label topSpacer = new()
+            {
+                Size = new(240, 1),
+                Location = new(80, 15),
+                BackColor = ProfessionalColors.SeparatorDark
+            };
 
 #pragma warning disable IDE0300
             settingsWindow.Controls.AddRange(
@@ -460,7 +538,8 @@ namespace TextEditor.Functionality
                 {
                     infoIcon, foreground, foreButton, editorBackground,
                     editorBackgroundButton, appBackground, appBackgroundButton,
-                    menuColor, menuColorButton
+                    menuColor, menuColorButton, spacer1, spacer2, spacer3, spacer4,
+                    spacer5, spacer6, spacer7, spacer8, topSpacer
                 }
             );
 #pragma warning restore IDE0300
@@ -513,7 +592,7 @@ namespace TextEditor.Functionality
         {
             window.BackColor = ProfessionalColors.SeparatorLight;
 
-            menuBar.BackColor = Color.FromArgb(100, 250, 230, 250);
+            menuBar.BackColor = Color.FromArgb(100, 240, 220, 230);
             menuBar.ForeColor = Color.Black;
             menuBar.Renderer = null;
 
@@ -525,7 +604,7 @@ namespace TextEditor.Functionality
 
             box.BackColor = Color.GhostWhite;
             box.ForeColor = Color.Black;
-            box.BorderStyle = BorderStyle.None;
+            box.BorderStyle = BorderStyle.FixedSingle;
         }
 
         // Sets the dark theme

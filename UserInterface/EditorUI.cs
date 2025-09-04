@@ -1,5 +1,6 @@
 ﻿// TextEditor
 
+using CommonLibrary.Collections;
 using TextEditor.Functionality;
 
 namespace TextEditor.UserInterface
@@ -68,7 +69,6 @@ namespace TextEditor.UserInterface
 
         // GitHub Menu
         private ToolStripMenuItem? _git;
-
 
 
         // Creates new editor.
