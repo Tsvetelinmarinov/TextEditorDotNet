@@ -91,16 +91,16 @@ namespace TextEditor.UserInterface
 
         // Creates the text area of the editor
         private void CreateEditor()
-        {
+        {         
             _textBox = new()
             {
-                Size = new(1383, 711),
-                Location = new(0, 50),
+                Size = new(1384, 711),
+                Location = new(-1, 52),
                 Multiline = true,
                 Font = new("Cascadia Code", 14),
                 BackColor = Color.GhostWhite,
                 ScrollBars = ScrollBars.Both,
-                BorderStyle = BorderStyle.None,
+                BorderStyle = BorderStyle.FixedSingle,
                 WordWrap = false,
                 Anchor = AnchorStyles.Left | AnchorStyles.Right | AnchorStyles.Top | AnchorStyles.Bottom
             };

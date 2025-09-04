@@ -254,6 +254,12 @@ namespace TextEditor.Functionality
             propWind.MinimumSize = propWind.Size;
             propWind.MaximumSize = propWind.Size;
 
+            Label topBorder = new()
+            {
+                BackColor = ProfessionalColors.SeparatorDark,
+                Bounds = new(20, 25, 645, 1)
+            };
+
             Label fontName = new()
             {
                 Text = "Font",
@@ -292,6 +298,12 @@ namespace TextEditor.Functionality
             };
             colorPicker.Click += (sender, EventArgs) => ChangeForeground(box);
 
+            Label leftBorder = new()
+            {
+                BackColor = ProfessionalColors.SeparatorDark,
+                Bounds = new(20, 109, 140, 1)
+            };
+
             Label fontSize = new()
             {
                 Text = "Size",
@@ -315,7 +327,7 @@ namespace TextEditor.Functionality
                 Text = "Style",
                 Font = fontName.Font,
                 Size = new(50, 20),
-                Location = new(290, 100)
+                Location = new(300, 100)
             };
 
             object[] fontStyles = ["Regular", "Bold", "Italic", "Bold - Italic"];
@@ -330,7 +342,23 @@ namespace TextEditor.Functionality
             styleBox.Items.AddRange(fontStyles);
             styleBox.SelectedIndexChanged += (sender, eventArgs) => ChangeFontStyle(box, styleBox);
 
-            propWind.Controls.AddRange([fontName, fontBox, fontColor, colorPicker, fontSize, sizeSpinner, fontStyle, styleBox]);
+            Label rigthBorder = new()
+            {
+                BackColor = ProfessionalColors.SeparatorDark,
+                Bounds = new(520, 109, 140, 1)
+            };
+
+#pragma warning disable IDE0300
+            propWind.Controls.AddRange(
+                new Control[]
+                {
+                    fontName, fontBox, fontColor,
+                    colorPicker, fontSize, sizeSpinner,
+                    fontStyle, styleBox, topBorder,
+                    leftBorder, rigthBorder
+                }
+            );
+#pragma warning restore IDE0300
         }
 
         // Opens Manual configuration window that allows the user to create own theme.
